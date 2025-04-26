@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Armazém da Sra. Lourdes</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main class="container">
+        <h1>Armazém da Sra. Lourdes</h1>
+
+        <section id="cadastro">
+            <h2>Cadastro</h2>
+            <input type="text" id="nomeCliente" placeholder="Seu nome">
+            <input type="tel" id="telefoneCliente" placeholder="WhatsApp (ex: 41999999999)">
+        </section>
+
+        <section id="catalogo">
+            <h2>Produtos</h2>
+            <div class="produtos-grid">
+                <div class="produto">
+                    <img src="https://via.placeholder.com/150?text=Geleia" alt="Geleia Caseira">
+                    <p>Geleia Caseira</p>
+                    <span>R$10</span>
+                    <button onclick="adicionarAoCarrinho('Geleia Caseira', 10)">Adicionar</button>
+                </div>
+                <div class="produto">
+                    <img src="https://via.placeholder.com/150?text=Tomate" alt="Tomate Orgânico">
+                    <p>Tomate Orgânico</p>
+                    <span>R$5</span>
+                    <button onclick="adicionarAoCarrinho('Tomate Orgânico', 5)">Adicionar</button>
+                </div>
+                <div class="produto">
+                    <img src="https://via.placeholder.com/150?text=Pão+de+Queijo" alt="Pão de Queijo">
+                    <p>Pão de Queijo</p>
+                    <span>R$8</span>
+                    <button onclick="adicionarAoCarrinho('Pão de Queijo', 8)">Adicionar</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="carrinho">
+            <h2>Carrinho</h2>
+            <ul id="itensCarrinho"></ul>
+            <p>Total: R$<span id="total">0</span></p>
+            <button onclick="finalizarPedido()">Finalizar Pedido</button>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
