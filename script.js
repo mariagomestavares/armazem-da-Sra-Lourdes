@@ -1,4 +1,4 @@
-// Carrinho
+
 let carrinho = [];
 let total = 0;
 
