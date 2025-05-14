@@ -76,7 +76,7 @@ function finalizarPedido() {
 
 document.getElementById("checkout-button").addEventListener("click", finalizarPedido);
 
-// Cálculo CRC16 para o QR Code PIX
+
 function calcularCRC16(payload) {
     let polinomio = 0x1021;
     let resultado = 0xFFFF;
@@ -91,7 +91,7 @@ function calcularCRC16(payload) {
     return resultado.toString(16).toUpperCase().padStart(4, '0');
 }
 
-// Geração do QR Code PIX
+
 document.getElementById("gerar-qr-button").addEventListener("click", function() {
     if (total === 0) {
         alert("O carrinho está vazio. Adicione produtos antes de gerar o QR Code.");
