@@ -70,7 +70,7 @@ function finalizarPedido() {
 
     const pedido = carrinho.map(item => `${item.nome} - R$${item.preco.toFixed(2)}`).join('\n');
     const mensagem = `Olá, gostaria de fazer um pedido:\n\n${pedido}\n\nTotal: R$${total.toFixed(2)}`;
-    const whatsappUrl = `https://wa.me/5543998306254?text=${encodeURIComponent(mensagem)}`;
+    const whatsappUrl = `https://wa.me/5543996795604?text=${encodeURIComponent(mensagem)}`;
     window.open(whatsappUrl, "_blank");
 }
 
@@ -101,19 +101,19 @@ document.getElementById("gerar-qr-button").addEventListener("click", function() 
     const valorPIX = total.toFixed(2);
 
     const pixData = {
-        chave: "14958480943",         // Chave PIX
-        nome: "Maria Isabely",        // Máx. 25 caracteres
-        cidade: "Rio Branco",         // Máx. 15 caracteres, sem acento
+        chave: "14958480943",         
+        nome: "Maria",        
+        cidade: "Rio Branco",         
     };
 
-    // Construção do payload PIX (sem CRC)
+    
     let payloadSemCRC =
         "000201" +
         "010211" +
         "26370016BR.GOV.BCB.PIX" +
         `0113${pixData.chave}` +
         "52040000" +
-        "5303986" +  // BRL
+        "5303986" +  
         `54${valorPIX.length === 4 ? '0' : ''}${valorPIX}` +
         "5802BR" +
         `5913${pixData.nome}` +
@@ -121,11 +121,11 @@ document.getElementById("gerar-qr-button").addEventListener("click", function() 
         "62070503***" +
         "6304";
 
-    // Cálculo e inclusão do CRC16 no final
+    
     const crc16 = calcularCRC16(payloadSemCRC);
     const payloadFinal = payloadSemCRC + crc16;
 
-    // Gerar QR Code no canvas
+    
     QRCode.toCanvas(document.getElementById("qrcode"), payloadFinal, function (error) {
         if (error) console.error(error);
         else console.log("QR Code gerado com sucesso!");
